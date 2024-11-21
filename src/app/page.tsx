@@ -53,7 +53,7 @@ const principles = [
 
 const Home = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Navigation Bar */}
       <nav className="fixed top-0 w-full py-3 px-6 bg-white/70 backdrop-blur-md z-50">
         <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 py-4">
@@ -196,7 +196,7 @@ const Home = () => {
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="flex flex-col space-y-12">
             {/* Heading */}
-            <h2 className="text-[60px] leading-[1.1] tracking-tight max-w-2xl">
+            <h2 className="text-[60px] leading-[1.1] tracking-tight max-w-2xl text-black">
               Rebuilding the
               <br />
               Information Layer
@@ -221,14 +221,14 @@ const Home = () => {
 
       <section className="w-full bg-white ">
         {/* Values Grid */}
-        <div className="max-w-[1400px] mx-auto px-6 mt-12 border-t pt-12">
-          <div className="grid grid-cols-3 gap-8">
+        <div className="max-w-[1400px] mx-auto px-6 border-t pt-12">
+          <div className="grid grid-cols-3 divide-x">
             {values.map((value, index) => (
-              <div key={index} className="flex flex-col">
+              <div key={index} className="flex flex-col px-8 first:pl-0">
                 <span className="text-sm text-gray-500 mb-8">
                   — {value.number}
                 </span>
-                <h3 className="text-2xl font-normal mb-6">{value.title}</h3>
+                <h3 className="text-2xl font-semibold mb-6 text-black">{value.title}</h3>
                 <p className="text-gray-600 leading-relaxed">
                   {value.description}
                 </p>
@@ -246,15 +246,12 @@ const Home = () => {
       </section>
 
       <section className="w-full bg-white">
-        {/* Label */}
 
         <section className="w-full bg-white">
-          {/* Content Grid */}
           <div className="max-w-[1400px] mx-auto px-6 mt-32 mb-28">
             <div className="flex w-full gap-8">
-              {/* Left Column - Text */}
               <div className="flex flex-col w-1/3 justify-between">
-                <h2 className="text-[60px] leading-[1.1] tracking-tight mb-32">
+                <h2 className="text-[60px] leading-[1.1] tracking-tight text-black mb-32">
                   Gen AI, the
                   <br />
                   Key Enabler
@@ -265,7 +262,6 @@ const Home = () => {
                 </p>
               </div>
 
-              {/* Right Column - Video */}
               <div className="relative aspect-[6/3] w-2/3">
                 <video
                   autoPlay
@@ -285,102 +281,112 @@ const Home = () => {
 
       <section className="w-full bg-white">
         <div className="max-w-[1400px] mx-auto px-6">
-          {/* Label */}
           <div className="inline-block border-b border-l px-4 py-1 text-sm text-gray-600 mb-32 w-full">
             FUTURE
           </div>
 
-          {/* Main Content */}
-          <div className="grid grid-cols-2 gap-16 mb-16">
-            {/* Left Column - Image */}
-            <div className="flex justify-center items-center relative aspect-square h-[500px]">
-              <Image
-                src={"./chip.png"}
-                alt="AI visualization"
-                className="w-full h-full object-cover "
-                width={500}
-                height={500}
-              />
-            </div>
+          <div className="min-h-screen bg-white p-8 md:p-16">
+            <div className="gap-16 mb-16 w-full relative flex flex-col md:flex-row">
+              {/* Sticky Image Column */}
+              <div className="w-full md:w-1/2 sticky top-0 h-[500px] aspect-square flex items-center justify-center">
+                <div className="h-full w-full relative">
+                  <Image
+                    src={"./chip.png"}
+                    alt="AI visualization"
+                    className="w-full h-full object-cover "
+                    width={500}
+                    height={500}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent rounded-lg" />
+                </div>
+              </div>
 
-            {/* Right Column - Text Content */}
-            <div className="flex flex-col h-[500px]">
-              <h2 className="text-[60px] leading-[1.1] tracking-tight mb-8">
-                AI Principles
-              </h2>
+              {/* Scrollable Content Column */}
+              <div className="w-full md:w-1/2 flex flex-col">
+                <h2 className="text-[60px] leading-[1.1] tracking-tight mb-8 text-black">
+                  AI Principles
+                </h2>
 
-              <p className="text-xl text-gray-600 mb-16">
-                Bronco develops and deploys AI responsibly to its customers.
-              </p>
+                <p className="text-xl text-gray-600 mb-16">
+                  Bronco develops and deploys AI responsibly to its customers.
+                </p>
 
-              {/* Principles List */}
-              <div className="space-y-12">
-                {principles.map((principle, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-6 border-dotted border-2 p-8"
-                  >
-                    {/* <span className="text-2xl">*</span> */}
-                    <SquareAsterisk className="w-8 h-8 text-2xl" />
+                <div className="space-y-12">
+                  {principles.map((principle, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start gap-6 border-dotted border-2 p-8 rounded-lg
+                  hover:border-black/50 transition-colors duration-300"
+                    >
+                      <SquareAsterisk className="w-8 h-8 text-2xl text-gray-500 flex-shrink-0" />
 
-                    <div>
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className="text-lg text-gray-500">
-                          {principle.number}
-                        </span>
-                        <span className="text-lg">/</span>
-                        <span className="text-lg font-medium">
-                          {principle.title}
-                        </span>
+                      <div>
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className="text-lg text-gray-500">
+                            {principle.number}
+                          </span>
+                          <span className="text-lg text-gray-500">/</span>
+                          <span className="text-lg font-medium text-black">
+                            {principle.title}
+                          </span>
+                        </div>
+                        <p className="text-gray-600 leading-relaxed max-w-xl">
+                          {principle.description}
+                        </p>
                       </div>
-                      <p className="text-gray-600 leading-relaxed max-w-xl">
-                        {principle.description}
-                      </p>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </section>
 
-      <div className="min-h-screen bg-black text-white">
-        {/* Top label */}
-        <div className="absolute top-8 left-8">
+      <div className="min-h-screen bg-black text-white relative ">
+        <div className="max-w-[1400px] mx-auto px-6">
+          {/* Top label */}
+          {/* <div className="absolute top-8 left-8">
           <span className="text-sm uppercase tracking-wider">Hiring</span>
-        </div>
+        </div> */}
+          <div className="inline-block border-b border-l border-gray-800 px-4 py-1 text-base text-gray-600 mt-14 w-full">
+            HIRING
+          </div>
 
-        {/* Main content container */}
-        <div className="min-h-screen flex items-center">
-          <div className="w-full max-w-7xl mx-auto px-8 grid grid-cols-2 gap-24">
-            {/* Left column */}
-            <div className="flex flex-col justify-between">
-              <h1 className="text-7xl font-light mb-auto pt-32">Join Us</h1>
-              <div className="mb-16">
-                <a
-                  href="#careers"
-                  className="inline-block text-lg border-b border-white pb-1 hover:opacity-80 transition-opacity"
-                >
-                  Careers →
-                </a>
+
+          {/* Main content container */}
+          <div className=" flex items-center">
+            <div className="w-full mx-auto px-8 grid grid-cols-2 gap-24 ">
+              {/* Left column */}
+              <div className="flex flex-col justify-between h-[470px]">
+                <h1 className="text-7xl font-light mb-auto pt-32">Join Us</h1>
+                <div className="mb-16">
+                  <a
+                    href="#careers"
+                    className="inline-block text-lg border-b border-white pb-1 hover:opacity-80 transition-opacity"
+                  >
+                    Careers →
+                  </a>
+                </div>
               </div>
-            </div>
 
-            {/* Right column */}
-            <div className="pt-32">
-              <h2 className="text-2xl font-light mb-8">WORK ON WHAT MATTERS</h2>
-              <p className="text-gray-300 text-lg leading-relaxed max-w-xl">
-                We are always looking for exceptional people to join us on the
-                frontier. Our team includes ML researchers, distributed systems
-                engineers, big data analysts, and former manufacturing C-Suite.
-                We work across disciplines, get our hands dirty, and are
-                laser-focused on delivering success to the people and firms we
-                serve.
-              </p>
+              {/* Right column */}
+              <div className="pt-32 h-[470px] flex flex-col justify-between ">
+                <h2 className="text-2xl font-light mb-8">WORK ON WHAT MATTERS</h2>
+                <p className="text-gray-400 text-lg leading-relaxed max-w-xl">
+                  We are always looking for exceptional people to join us on the
+                  frontier. Our team includes ML researchers, distributed systems
+                  engineers, big data analysts, and former manufacturing C-Suite.
+                  We work across disciplines, get our hands dirty, and are
+                  laser-focused on delivering success to the people and firms we
+                  serve.
+                </p>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
 
       <footer className="bg-black text-white px-8 py-16">
@@ -392,9 +398,9 @@ const Home = () => {
             <div className="flex items-center">
               <Link href="/" className="flex items-center opacity-100">
                 <Image
-                  src="./logo.svg"
+                  src="./bottom_logo.svg"
                   alt="Bronco Logo"
-                  className="h-8 brightness-100 contrast-100 text-white"
+                  className="h-8 brightness-100 contrast-100"
                   width={500}
                   height={500}
                 />
