@@ -1,106 +1,6 @@
-import Image from "next/image";
-
-// export default function Home() {
-//   return (
-//     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-//       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-//         <Image
-//           className="dark:invert"
-//           src="/next.svg"
-//           alt="Next.js logo"
-//           width={180}
-//           height={38}
-//           priority
-//         />
-//         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-//           <li className="mb-2">
-//             Get started by editing{" "}
-//             <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-//               src/app/page.tsx
-//             </code>
-//             .
-//           </li>
-//           <li>Save and see your changes instantly.</li>
-//         </ol>
-
-//         <div className="flex gap-4 items-center flex-col sm:flex-row">
-//           <a
-//             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-//             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             <Image
-//               className="dark:invert"
-//               src="/vercel.svg"
-//               alt="Vercel logomark"
-//               width={20}
-//               height={20}
-//             />
-//             Deploy now
-//           </a>
-//           <a
-//             className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-//             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             Read our docs
-//           </a>
-//         </div>
-//       </main>
-//       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-//         <a
-//           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-//           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           <Image
-//             aria-hidden
-//             src="/file.svg"
-//             alt="File icon"
-//             width={16}
-//             height={16}
-//           />
-//           Learn
-//         </a>
-//         <a
-//           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-//           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           <Image
-//             aria-hidden
-//             src="/window.svg"
-//             alt="Window icon"
-//             width={16}
-//             height={16}
-//           />
-//           Examples
-//         </a>
-//         <a
-//           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-//           href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           <Image
-//             aria-hidden
-//             src="/globe.svg"
-//             alt="Globe icon"
-//             width={16}
-//             height={16}
-//           />
-//           Go to nextjs.org →
-//         </a>
-//       </footer>
-//     </div>
-//   );
-// }
-
 import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, SquareAsterisk } from "lucide-react";
 
 const values = [
@@ -112,9 +12,9 @@ const values = [
   },
   {
     number: "02",
-    title: "Play the hand you're dealt.",
+    title: "Play the hand you&aposre dealt.",
     description:
-      "Bronco doesn't shy away from antiquated and siloed industrial data. Bronco ships applications that don't assume any prerequisites and dedicates R&D towards making AI systems useful for companies of all data maturity levels.",
+      "Bronco doesn&apost shy away from antiquated and siloed industrial data. Bronco ships applications that don&apost assume any prerequisites and dedicates R&D towards making AI systems useful for companies of all data maturity levels.",
   },
   {
     number: "03",
@@ -147,7 +47,7 @@ const principles = [
     number: "04",
     title: "LOW EGO, ALWAYS LEARNING",
     description:
-      "Bronco is customer-first, not AI-first. Bronco's systems are always learning from real-world deployments and feedback.",
+      "Bronco is customer-first, not AI-first. Bronco&aposs systems are always learning from real-world deployments and feedback.",
   },
 ];
 
@@ -159,17 +59,23 @@ const Home = () => {
         <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 py-4">
           {/* Logo */}
           <div className="flex items-center space-x-12">
-            <a href="/" className="flex items-center">
-              <img src="./logo.svg" alt="Bronco Logo" className="h-8" />
-            </a>
+            <Link href="/">
+              <Image
+                src="./logo.svg"
+                alt="Bronco Logo"
+                className="h-8"
+                width={500}
+                height={500}
+              />
+            </Link>
 
             {/* Navigation Links */}
             <div className="flex items-center space-x-8">
-              <a href="#" className="text-gray-800 hover:text-gray-600">
+              <Link href="#" className="text-gray-800 hover:text-gray-600">
                 Home
-              </a>
+              </Link>
               <div className="relative group">
-                <a
+                <Link
                   href="#"
                   className="text-gray-800 hover:text-gray-600 flex items-center"
                 >
@@ -187,14 +93,34 @@ const Home = () => {
                       d="M19 9l-7 7-7-7"
                     />
                   </svg>
-                </a>
+                </Link>
+
+                {/* <a
+                  href="#"
+                  className="text-gray-800 hover:text-gray-600 flex items-center"
+                >
+                  Systems
+                  <svg
+                    className="w-4 h-4 ml-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </a> */}
               </div>
-              <a href="#" className="text-gray-800 hover:text-gray-600">
+              <Link href="#" className="text-gray-800 hover:text-gray-600">
                 Company
-              </a>
-              <a href="#" className="text-gray-800 hover:text-gray-600">
+              </Link>
+              <Link href="#" className="text-gray-800 hover:text-gray-600">
                 Careers
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -244,8 +170,8 @@ const Home = () => {
               {/* Right Content */}
               <div className="max-w-md mb-32">
                 <p className="text-white/90 text-xl mb-8">
-                  Bronco's mission is to rebuild the information layer of the
-                  American industrial base, bit by bit.
+                  Bronco&aposs mission is to rebuild the information layer of
+                  the American industrial base, bit by bit.
                 </p>
                 <button className="text-white flex items-center space-x-2 hover:opacity-80 transition-opacity">
                   <span>Schedule a Demo</span>
@@ -321,13 +247,6 @@ const Home = () => {
 
       <section className="w-full bg-white">
         {/* Label */}
-        {/* <div className="max-w-[1400px] mx-auto px-6">
-          <div className="inline-block border-b border-l border-gray-300 px-4 py-1">
-            <span className="text-sm text-gray-600 tracking-wide uppercase font-mono">
-              DISRUPTIVE
-            </span>
-          </div>
-        </div> */}
 
         <section className="w-full bg-white">
           {/* Content Grid */}
@@ -375,10 +294,12 @@ const Home = () => {
           <div className="grid grid-cols-2 gap-16 mb-16">
             {/* Left Column - Image */}
             <div className="flex justify-center items-center relative aspect-square h-[500px]">
-              <img
+              <Image
                 src={"./chip.png"}
                 alt="AI visualization"
                 className="w-full h-full object-cover "
+                width={500}
+                height={500}
               />
             </div>
 
@@ -423,6 +344,138 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <div className="min-h-screen bg-black text-white">
+        {/* Top label */}
+        <div className="absolute top-8 left-8">
+          <span className="text-sm uppercase tracking-wider">Hiring</span>
+        </div>
+
+        {/* Main content container */}
+        <div className="min-h-screen flex items-center">
+          <div className="w-full max-w-7xl mx-auto px-8 grid grid-cols-2 gap-24">
+            {/* Left column */}
+            <div className="flex flex-col justify-between">
+              <h1 className="text-7xl font-light mb-auto pt-32">Join Us</h1>
+              <div className="mb-16">
+                <a
+                  href="#careers"
+                  className="inline-block text-lg border-b border-white pb-1 hover:opacity-80 transition-opacity"
+                >
+                  Careers →
+                </a>
+              </div>
+            </div>
+
+            {/* Right column */}
+            <div className="pt-32">
+              <h2 className="text-2xl font-light mb-8">WORK ON WHAT MATTERS</h2>
+              <p className="text-gray-300 text-lg leading-relaxed max-w-xl">
+                We are always looking for exceptional people to join us on the
+                frontier. Our team includes ML researchers, distributed systems
+                engineers, big data analysts, and former manufacturing C-Suite.
+                We work across disciplines, get our hands dirty, and are
+                laser-focused on delivering success to the people and firms we
+                serve.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer className="bg-black text-white px-8 py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="border-t border-gray-800 mb-16"></div>
+
+          <div className="grid grid-cols-5 gap-8 mb-16">
+            {/* Logo Column - Updated with better contrast */}
+            <div className="flex items-center">
+              <Link href="/" className="flex items-center opacity-100">
+                <Image
+                  src="./logo.svg"
+                  alt="Bronco Logo"
+                  className="h-8 brightness-100 contrast-100 text-white"
+                  width={500}
+                  height={500}
+                />
+              </Link>
+            </div>
+
+            {/* Contact Column */}
+            <div className="space-y-4">
+              <h3 className="text-gray-500 text-sm mb-6">Contact</h3>
+              <a
+                href="mailto:contact@bronco.ai"
+                className="block text-sm text-white hover:text-gray-300"
+              >
+                contact[at]bronco.ai
+              </a>
+              <a
+                href="/demo"
+                className="block text-sm text-white hover:text-gray-300"
+              >
+                Schedule a demo
+              </a>
+            </div>
+
+            {/* Systems Column */}
+            <div className="space-y-4">
+              <h3 className="text-gray-500 text-sm mb-6">Systems</h3>
+              <a
+                href="/procurement"
+                className="block text-sm text-white hover:text-gray-300"
+              >
+                AI Procurement Agent
+              </a>
+              <a
+                href="/os"
+                className="block text-sm text-white hover:text-gray-300"
+              >
+                Stampede OS
+              </a>
+            </div>
+
+            {/* Company Column */}
+            <div className="space-y-4">
+              <h3 className="text-gray-500 text-sm mb-6">Company</h3>
+              <a
+                href="/company"
+                className="block text-sm text-white hover:text-gray-300"
+              >
+                Company
+              </a>
+              <a
+                href="/careers"
+                className="block text-sm text-white hover:text-gray-300"
+              >
+                Careers
+              </a>
+            </div>
+
+            {/* Legal Column */}
+            <div className="space-y-4">
+              <h3 className="text-gray-500 text-sm mb-6">Legal</h3>
+              <a
+                href="/terms"
+                className="block text-sm text-white hover:text-gray-300"
+              >
+                Terms of use
+              </a>
+              <a
+                href="/privacy"
+                className="block text-sm text-white hover:text-gray-300"
+              >
+                Privacy policy
+              </a>
+            </div>
+          </div>
+
+          {/* Copyright - Updated with proper opacity */}
+          <div className="text-sm text-gray-500">
+            © 2024 Bronco AI. All rights reserved.
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
