@@ -63,7 +63,7 @@ const Home = () => {
               <Image
                 src="./logo.svg"
                 alt="Bronco Logo"
-                className="h-8"
+                className="h-8 w-32"
                 width={500}
                 height={500}
               />
@@ -228,7 +228,9 @@ const Home = () => {
                 <span className="text-sm text-gray-500 mb-8">
                   — {value.number}
                 </span>
-                <h3 className="text-2xl font-semibold mb-6 text-black">{value.title}</h3>
+                <h3 className="text-2xl font-semibold mb-6 text-black">
+                  {value.title}
+                </h3>
                 <p className="text-gray-600 leading-relaxed">
                   {value.description}
                 </p>
@@ -246,7 +248,6 @@ const Home = () => {
       </section>
 
       <section className="w-full bg-white">
-
         <section className="w-full bg-white">
           <div className="max-w-[1400px] mx-auto px-6 mt-32 mb-28">
             <div className="flex w-full gap-8">
@@ -340,11 +341,10 @@ const Home = () => {
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
-      <div className="min-h-screen bg-black text-white relative ">
+      <div className=" bg-black text-white relative ">
         <div className="max-w-[1400px] mx-auto px-6">
           {/* Top label */}
           {/* <div className="absolute top-8 left-8">
@@ -353,7 +353,6 @@ const Home = () => {
           <div className="inline-block border-b border-l border-gray-800 px-4 py-1 text-base text-gray-600 mt-14 w-full">
             HIRING
           </div>
-
 
           {/* Main content container */}
           <div className=" flex items-center">
@@ -373,20 +372,21 @@ const Home = () => {
 
               {/* Right column */}
               <div className="pt-32 h-[470px] flex flex-col justify-between ">
-                <h2 className="text-2xl font-light mb-8">WORK ON WHAT MATTERS</h2>
+                <h2 className="text-2xl font-light mb-8">
+                  WORK ON WHAT MATTERS
+                </h2>
                 <p className="text-gray-400 text-lg leading-relaxed max-w-xl">
                   We are always looking for exceptional people to join us on the
-                  frontier. Our team includes ML researchers, distributed systems
-                  engineers, big data analysts, and former manufacturing C-Suite.
-                  We work across disciplines, get our hands dirty, and are
-                  laser-focused on delivering success to the people and firms we
-                  serve.
+                  frontier. Our team includes ML researchers, distributed
+                  systems engineers, big data analysts, and former manufacturing
+                  C-Suite. We work across disciplines, get our hands dirty, and
+                  are laser-focused on delivering success to the people and
+                  firms we serve.
                 </p>
               </div>
             </div>
           </div>
         </div>
-
       </div>
 
       <footer className="bg-black text-white px-8 py-16">
