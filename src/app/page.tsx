@@ -292,7 +292,7 @@ const Home = () => {
               <div className="w-full md:w-1/2 sticky top-0 h-[500px] aspect-square flex items-center justify-center">
                 <div className="h-full w-full relative">
                   <Image
-                    src={"./chip.png"}
+                    src="/chip.png"
                     alt="AI visualization"
                     className="w-full h-full object-cover "
                     width={500}
